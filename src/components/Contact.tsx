@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Contact() {
   return (
@@ -81,6 +82,14 @@ export default function Contact() {
             unoptimized
           />
           <p className="text-sm text-slate-400">© 2026 SHREEM SEWING MACHINE CO. All rights reserved.</p>
+          <nav aria-label="Legal information" className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-slate-400">
+            <Link href="/privacy-policy" className="transition-colors hover:text-cyan-300">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="transition-colors hover:text-cyan-300">
+              Terms &amp; Conditions
+            </Link>
+          </nav>
         </footer>
       </div>
     </section>
