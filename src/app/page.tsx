@@ -1,65 +1,50 @@
-import Image from "next/image";
+import Image from 'next/image';
+
+import Hero from '@/components/Hero';
+import Catalog from '@/components/Catalog';
+import About from '@/components/About';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+    <main className="min-h-screen bg-slate-950">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-950/95 backdrop-blur-md">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6" aria-label="Main navigation">
+          <a href="#" className="leading-tight text-white">
+            <span className="flex items-center gap-3">
+              <span className="relative h-12 w-12 overflow-hidden rounded-full bg-white">
+                <Image
+                  src="/branding/company-logo.jpeg"
+                  alt="SHREEM Sewing Machine Co."
+                  fill
+                  sizes="48px"
+                  className="object-contain p-1"
+                />
+              </span>
+              <span>
+                <span className="block text-lg font-black tracking-[0.12em]">SHREEM</span>
+                <span className="block text-[10px] font-semibold tracking-[0.22em] text-cyan-400">SEWING MACHINE CO.</span>
+              </span>
+            </span>
           </a>
+          <div className="hidden items-center gap-7 text-sm font-semibold text-slate-300 md:flex">
+            <a href="#" className="hover:text-cyan-400">Home</a>
+            <a href="#catalog" className="hover:text-cyan-400">Products</a>
+            <a href="#about" className="hover:text-cyan-400">About</a>
+            <a href="#contact" className="hover:text-cyan-400">Contact</a>
+          </div>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+919558700774"
+            className="rounded-md bg-cyan-500 px-4 py-2.5 text-sm font-bold text-slate-950 transition-colors hover:bg-cyan-400"
           >
-            Documentation
+            Call Now
           </a>
-        </div>
-      </main>
-    </div>
+        </nav>
+      </header>
+      <Hero />
+      <Catalog />
+      <About />
+      <Contact />
+    </main>
   );
 }
