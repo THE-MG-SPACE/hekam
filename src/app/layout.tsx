@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shreemsewingmachine.com"),
   title: "SHREEM Sewing Machine Co. | Rajkot",
   description: "Quality domestic and industrial sewing machines, spare parts, and expert sewing machine services in Rajkot.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
